@@ -7,9 +7,9 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "StreamLine - The Complete Platform to Build the Web",
+  title: "RedGroup - Healthcare Recruitment the Red Way",
   description:
-    "Your team's toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best web experiences.",
+    "Connecting exceptional healthcare professionals with leading care providers across the UK. Your next nursing or homecare opportunity starts here.",
   generator: "v0.app",
 }
 

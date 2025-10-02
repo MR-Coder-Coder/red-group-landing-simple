@@ -55,8 +55,8 @@ export function RegistrationForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-        <p className="text-muted-foreground">We've received your registration and will be in touch soon.</p>
+        <h3 className="text-2xl font-bold mb-2 text-white">Thank You!</h3>
+        <p className="text-white/80">We've received your registration and will be in touch soon.</p>
       </div>
     )
   }
@@ -114,7 +114,7 @@ export function RegistrationForm() {
         <Input id="hearAbout" name="hearAbout" placeholder="How did you hear about us?" />
       </div>
 
-      <p className="text-sm text-muted-foreground">
+      <p className="text-sm text-white/70">
         To find out about how we process your data, please read our privacy policy.
       </p>
 

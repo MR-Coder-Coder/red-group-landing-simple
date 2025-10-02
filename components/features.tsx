@@ -56,12 +56,13 @@ export function Features() {
   }, [])
 
   return (
-    <section id="features" className="container py-24 md:py-32">
+    <section id="features" className="relative py-24 md:py-32">
+      <div className="container mx-auto">
       <div className="flex flex-col items-center gap-4 text-center mb-16">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
           Why choose <span className="text-primary">RedGroup</span>?
         </h2>
-        <p className="max-w-2xl text-balance text-lg text-muted-foreground">
+        <p className="max-w-2xl text-balance text-lg text-white/80 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
           We're committed to connecting healthcare professionals with opportunities that make a real difference in
           people's lives.
         </p>
@@ -69,24 +70,27 @@ export function Features() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (
-          <Card
+          <div
             key={index}
             ref={(el) => {
               cardsRef.current[index] = el
             }}
-            className="border-border bg-card opacity-0 hover:shadow-lg transition-shadow"
+            className="opacity-0"
           >
-            <CardContent className="flex flex-col gap-4 p-6">
+            <Card className="border-border/50 bg-black/30 backdrop-blur-sm hover:shadow-lg transition-all hover:bg-black/40">
+              <CardContent className="flex flex-col gap-4 p-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+                <p className="text-sm text-white/80 leading-relaxed">{feature.description}</p>
               </div>
             </CardContent>
           </Card>
+          </div>
         ))}
+      </div>
       </div>
     </section>
   )

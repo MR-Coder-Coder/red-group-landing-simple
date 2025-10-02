@@ -48,20 +48,26 @@ export function Background3D() {
   if (!isClient) {
     return (
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-950/10 to-transparent" />
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-red-950/40 via-red-900/20 to-transparent" />
       </div>
     )
   }
 
   return (
-    <div className="fixed inset-0 -z-10">
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-950/10 to-transparent" />
-      <div className="opacity-40">
-        <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
-          <ambientLight intensity={1.2} />
-          <directionalLight position={[10, 10, 5]} intensity={2} />
-          <directionalLight position={[-10, -10, -5]} intensity={1} color="#dc2626" />
-          <pointLight position={[0, 0, 0]} intensity={1.5} color="#dc2626" />
+    <div className="fixed inset-0 -z-10 pointer-events-none">
+      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-950/40 via-red-900/20 to-transparent" />
+      <div className="w-full h-full opacity-80">
+        <Canvas 
+          camera={{ position: [0, 0, 8], fov: 75 }}
+          style={{ width: '100%', height: '100%' }}
+          gl={{ alpha: true, antialias: true }}
+        >
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#dc2626" />
+          <pointLight position={[0, 0, 0]} intensity={1} color="#dc2626" />
 
           <AnimatedSphere position={[0, 0, 0]} scale={3} color="#dc2626" speed={1} />
           <AnimatedSphere position={[4, 2, -2]} scale={1.5} color="#ef4444" speed={0.8} />
@@ -73,7 +79,7 @@ export function Background3D() {
             enableZoom={false}
             enablePan={false}
             autoRotate
-            autoRotateSpeed={0.3}
+            autoRotateSpeed={0.5}
             minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 1.5}
           />

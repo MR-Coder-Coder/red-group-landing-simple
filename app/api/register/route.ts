@@ -4,40 +4,41 @@ export async function POST(request: Request) {
   try {
     const data = await request.json()
 
-    // Format the email content
-    const emailContent = `
-New Registration from Red Homecare Website
+    // Send data to n8n webhook
+    const webhookUrl = "https://n8n-l8h7n-u38477.vm.elestio.app/webhook/email-submit"
+    
+    try {
+      const webhookResponse = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone || "Not provided",
+          careType: data.careType || "Not specified",
+          message: data.message || "No message",
+          hearAbout: data.hearAbout || "Not specified",
+          timestamp: new Date().toISOString(),
+          source: "Red Homecare Website"
+        }),
+      })
 
-First Name: ${data.firstName}
-Last Name: ${data.lastName}
-Email: ${data.email}
-Phone: ${data.phone || "Not provided"}
-Care Type: ${data.careType || "Not specified"}
-Message: ${data.message || "No message"}
-How they heard about us: ${data.hearAbout || "Not specified"}
-    `.trim()
-
-    // In a real application, you would send this via an email service
-    // For now, we'll just log it and return success
-    console.log("[v0] Registration received:", emailContent)
-    console.log("[v0] Would send to: ltb.mis247@gmail.com")
-
-    // Here you would integrate with an email service like:
-    // - Resend
-    // - SendGrid
-    // - AWS SES
-    // - Nodemailer
-
-    // Example with a hypothetical email service:
-    // await sendEmail({
-    //   to: "ltb.mis247@gmail.com",
-    //   subject: "New Registration from Red Homecare Website",
-    //   text: emailContent,
-    // })
+      if (!webhookResponse.ok) {
+        console.error("Webhook response error:", await webhookResponse.text())
+      } else {
+        console.log("Registration successfully sent to webhook")
+      }
+    } catch (webhookError) {
+      console.error("Error sending to webhook:", webhookError)
+      // Continue even if webhook fails - don't want to show error to user
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error("[v0] Error processing registration:", error)
+    console.error("Error processing registration:", error)
     return NextResponse.json({ success: false, error: "Failed to process registration" }, { status: 500 })
   }
 }
