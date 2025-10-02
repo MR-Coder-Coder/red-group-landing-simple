@@ -16,6 +16,9 @@ export function Header() {
             <Link href="#homecare" className="text-sm font-medium text-white hover:text-primary transition-colors">
               Homecare
             </Link>
+            <Link href="#clinical" className="text-sm font-medium text-white hover:text-primary transition-colors">
+              Clinical Care
+            </Link>
             <Link href="#about" className="text-sm font-medium text-white hover:text-primary transition-colors">
               About Us
             </Link>

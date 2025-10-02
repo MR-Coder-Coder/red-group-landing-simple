@@ -3,8 +3,10 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { HomecareSection } from "@/components/homecare-section"
 import { ServicesSection } from "@/components/services-section"
+import { ClinicalInterventions } from "@/components/clinical-interventions"
 import { ValuesSection } from "@/components/values-section"
 import { ContactSection } from "@/components/contact-section"
+import { AboutSection } from "@/components/about-section"
 import { RegistrationForm } from "@/components/registration-form"
 import { Footer } from "@/components/footer"
 
@@ -29,8 +31,10 @@ export default function Home() {
       <main className="relative w-full">
         <HomecareSection />
         <ServicesSection />
+        <ClinicalInterventions />
         <ValuesSection />
         <ContactSection />
+        <AboutSection />
         <section id="register" className="py-20 relative w-full">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
