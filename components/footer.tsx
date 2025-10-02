@@ -17,7 +17,6 @@ export function Footer() {
 
         <div className="space-y-2 text-sm text-white/80">
           <p>Red Group Personnel Ltd is registered in England and Wales, no. 11235320.</p>
-          <p>Registered office address: 124 City Road, London, England, EC1V 2NX.</p>
           <p>Company address: 3rd Floor - The News Building, 3 London Bridge Street, London, England, SE1 9SG</p>
           <p className="pt-4">© 2025 Red Group Ltd</p>
         </div>
