@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   description:
     "Connecting exceptional healthcare professionals with leading care providers across the UK. Your next nursing or homecare opportunity starts here.",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 }
 
 export default function RootLayout({
