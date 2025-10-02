@@ -23,16 +23,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button className="hidden md:inline-flex bg-primary hover:bg-primary/90">Contact us</Button>
-          <Button
-            variant="outline"
-            className="hidden md:inline-flex border-primary text-white hover:text-primary hover:bg-primary/10 bg-transparent"
-          >
-            Careers at Red
-          </Button>
-          <Button variant="ghost" size="icon" className="lg:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
+          {/* Buttons removed - only keeping functional registration */}
         </div>
       </div>
     </header>
