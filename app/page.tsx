@@ -8,6 +8,7 @@ import { RegistrationForm } from "@/components/registration-form"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 
+// Dynamically import Background3D with SSR disabled to prevent Three.js rendering errors during build
 const Background3D = dynamic(
   () => import("@/components/background-3d").then((mod) => ({ default: mod.Background3D })),
   { ssr: false }
