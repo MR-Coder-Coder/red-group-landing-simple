@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto py-12 text-center">
         <div className="mb-8">
           <Link href="/" className="flex items-center justify-center mb-4">
-            <Image src="/redgroup-logo.png" alt="RedGroup" width={180} height={40} className="h-10 w-auto" />
+            <Image src="/Red Logo Dark Trans.png" alt="RedGroup" width={240} height={60} className="h-16 w-auto" />
           </Link>
           <p className="text-sm text-white/80 max-w-md mx-auto leading-relaxed">
             Leading healthcare recruitment specialists connecting exceptional nursing and homecare professionals with

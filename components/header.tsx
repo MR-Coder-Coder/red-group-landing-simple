@@ -9,7 +9,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center">
-            <Image src="/redgroup-logo.png" alt="RedGroup" width={180} height={40} className="h-10 w-auto" />
+            <Image src="/Red Logo Dark Trans.png" alt="RedGroup" width={240} height={60} className="h-16 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
