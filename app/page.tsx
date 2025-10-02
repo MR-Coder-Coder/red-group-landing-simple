@@ -11,7 +11,14 @@ import { Footer } from "@/components/footer"
 // Dynamically import Background3D with SSR disabled to prevent Three.js rendering errors during build
 const Background3D = dynamic(
   () => import("@/components/background-3d").then((mod) => ({ default: mod.Background3D })),
-  { ssr: false }
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-950/10 to-transparent" />
+      </div>
+    )
+  }
 )
 
 export default function Home() {

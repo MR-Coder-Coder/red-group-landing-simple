@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Float } from "@react-three/drei"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import type { Mesh } from "three"
 
 function AnimatedSphere({
@@ -39,6 +39,20 @@ function AnimatedSphere({
 }
 
 export function Background3D() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return (
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-950/10 to-transparent" />
+      </div>
+    )
+  }
+
   return (
     <div className="fixed inset-0 -z-10">
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-950/10 to-transparent" />
