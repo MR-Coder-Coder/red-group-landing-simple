@@ -7,7 +7,7 @@ import { ClinicalInterventions } from "@/components/clinical-interventions"
 import { ValuesSection } from "@/components/values-section"
 import { ContactSection } from "@/components/contact-section"
 import { AboutSection } from "@/components/about-section"
-import { RegistrationForm } from "@/components/registration-form"
+import { LeadCaptureForm } from "@/components/lead-capture-form"
 import { Footer } from "@/components/footer"
 
 // Dynamically import Background3D with SSR disabled to prevent Three.js rendering errors during build
@@ -39,10 +39,13 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                Register with <span className="text-primary">Red Homecare</span>
+                Request a <span className="text-primary">Call Back</span>
               </h2>
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                Tell us about your care requirements and we'll get back to you with the perfect solution.
+              </p>
             </div>
-            <RegistrationForm />
+            <LeadCaptureForm />
           </div>
         </section>
       </main>
